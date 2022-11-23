@@ -1,0 +1,7 @@
+<p>I am posts</p>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li><a href="<%=post.url%>"><%= post.title %></a> - <%= post.votes %></li>
+  <% end %>
+</ul>
