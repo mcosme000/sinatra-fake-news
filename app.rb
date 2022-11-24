@@ -41,6 +41,14 @@ put '/posts/:id/upvote' do
   redirect to('/')
 end
 
+post '/posts' do
+  post = Post.new
+  post.title = params[:title]
+  post.save
+
+  redirect to('/')
+end
+
 get '/posts/:id/delete' do
   post = Post.find(params[:id])
   post.destroy
