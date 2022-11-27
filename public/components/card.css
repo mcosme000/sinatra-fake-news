@@ -1,0 +1,13 @@
+/* CARDS */
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: #fff;
+  border-bottom: 0.5px solid grey;
+}
+
+.card:last-child {
+  border-bottom: none;
+}

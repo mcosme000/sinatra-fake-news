@@ -1,20 +1,40 @@
+<div class="posts-container">
+
 <% @posts.each_with_index do |post, index| %>
   <div class="card">
-    <p>
-      <%=index + 1%> -
-      <a href="<%=post.url%>" target="_blank"><%= post.title %></a>
-      <%= post.votes %> votes
-    </p>
-    <%# form action goes to /posts/id/upvote %>
-    <form action="/posts/<%=post.id%>/upvote" method="POST" class="inline">
-      <input type="hidden" name="_method" value="PUT">
-      <input type="submit" value="upvote">
-    </form>
-    |
-    <%# form action goes to /posts/id/delete %>
-    <form action="/posts/<%=post.id%>/delete" method="DELETE" class="inline">
-      <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="delete" class="red-button">
-    </form>
+    <div>
+      <p>
+        <%=index + 1%> -
+        <a href="<%=post.url%>" target="_blank"><%= post.title %></a>
+        <%= post.votes %> votes
+      </p>
+      <%# form action goes to /posts/id/upvote %>
+      <form action="/posts/<%=post.id%>/upvote" method="POST" class="inline">
+        <input type="hidden" name="_method" value="PUT">
+        <button type="submit" class="btn-retro"><i class="fa fa-solid fa-caret-up"></i> Upvote</button>
+      </form>
+
+
+       <form action="/posts/<%=post.id%>/update" method="UPDATE" class="inline">
+        <input type="hidden" name="_method" value="UPDATE">
+        <button type="submit" class="btn-retro">Edit post</button>
+       </form>
+
+    </div>
+
+    <div class="action">
+       <%# form action goes to /posts/id/star %>
+       <form action="/posts/<%=post.id%>/star" method="UPDATE" class="inline">
+        <input type="hidden" name="_method" value="UPDATE">
+        <button type="submit" class="btn-retro"><i class="fa fa-solid fa-star"></i></button>
+       </form>
+
+       <%# form action goes to /posts/id/delete %>
+       <form action="/posts/<%=post.id%>/delete" method="DELETE" class="inline">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" class="btn-retro"><i class="fa fa-solid fa-trash"></i></button>
+      </form>
+    </div>
   </div>
 <% end %>
+</div>

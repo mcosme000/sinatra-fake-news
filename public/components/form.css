@@ -1,0 +1,10 @@
+.add-post {
+  background: #fff;
+  padding: 20px;
+}
+
+.add-post input {
+  margin-bottom: 10px;
+  padding: 8px 14px;
+  display: block;
+}

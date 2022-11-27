@@ -31,6 +31,10 @@ get '/add-post' do
   erb :add_post
 end
 
+get '/update-post' do
+  erb :edit_post
+end
+
 # The route I write here MUST BE THE SAME
 # that I add on the form action attr.
 put '/posts/:id/upvote' do
