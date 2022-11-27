@@ -14,11 +14,8 @@
         <button type="submit" class="btn-retro"><i class="fa fa-solid fa-caret-up"></i> Upvote</button>
       </form>
 
-
-       <form action="/posts/<%=post.id%>/update" method="UPDATE" class="inline">
-        <input type="hidden" name="_method" value="UPDATE">
-        <button type="submit" class="btn-retro">Edit post</button>
-       </form>
+      <%# EDIT POST %>
+      <a href="/posts/<%=post.id%>/edit" class="btn-retro">Edit post</a>
 
     </div>
 

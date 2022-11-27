@@ -31,8 +31,13 @@ get '/add-post' do
   erb :add_post
 end
 
-get '/update-post' do
-  erb :edit_post
+post '/posts' do
+  post = Post.new
+  post.title = params[:title]
+  post.url = params[:url]
+  post.save
+
+  redirect to('/')
 end
 
 # The route I write here MUST BE THE SAME
@@ -40,20 +45,28 @@ end
 put '/posts/:id/upvote' do
   post = Post.find(params[:id])
   post.votes += 1
-  post.save
+  post.save!
 
   redirect to('/')
 end
 
-post '/posts' do
-  post = Post.new
-  post.title = params[:title]
-  post.save
+get '/posts/:id/edit' do
+  @post = Post.find(params[:id])
+  erb :edit
+end
 
+post '/posts/:id' do
+  if params[:title] != ''
+    post = Post.find(params[:id])
+    post.title = params[:title]
+    post.url = params[:url]
+    post.save!
+  end
+  @posts = Post.all
   redirect to('/')
 end
 
-get '/posts/:id/delete' do
+get('/posts/:id/delete') do
   post = Post.find(params[:id])
   post.destroy
   @posts = Post.all.order(votes: :desc)
