@@ -1,13 +1,26 @@
 /* CARDS */
 
+.posts-container {
+  background: #fff;
+  border-radius: 5px;
+}
+
 .card {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  background: #fff;
-  border-bottom: 0.5px solid grey;
+  border-bottom: 0.5px solid rgb(192, 192, 192);
 }
+
 
 .card:last-child {
   border-bottom: none;
+}
+
+.card-content {
+  margin-right: 10px;
+}
+
+.votes {
+  font-weight: bold;
 }

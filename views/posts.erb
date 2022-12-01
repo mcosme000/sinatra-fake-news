@@ -2,11 +2,11 @@
 
 <% @posts.each_with_index do |post, index| %>
   <div class="card">
-    <div>
+    <div class="card-content">
       <p>
         <%=index + 1%> -
-        <a href="<%=post.url%>" target="_blank"><%= post.title %></a>
-        <%= post.votes %> votes
+        <a href="<%=post.url%>" target="_blank"><%= post.title %></a> -
+        <span class="votes"><%= post.votes %> votes</span>
       </p>
       <%# form action goes to /posts/id/upvote %>
       <form action="/posts/<%=post.id%>/upvote" method="POST" class="inline">
@@ -21,15 +21,15 @@
 
     <div class="action">
        <%# form action goes to /posts/id/star %>
-       <form action="/posts/<%=post.id%>/star" method="UPDATE" class="inline">
+       <form action="/posts/<%=post.id%>/star" method="UPDATE">
         <input type="hidden" name="_method" value="UPDATE">
-        <button type="submit" class="btn-retro"><i class="fa fa-solid fa-star"></i></button>
+        <button type="submit" class="btn-retro btn-small"><i class="fa fa-solid fa-star"></i></button>
        </form>
 
        <%# form action goes to /posts/id/delete %>
-       <form action="/posts/<%=post.id%>/delete" method="DELETE" class="inline">
+       <form action="/posts/<%=post.id%>/delete" method="DELETE">
         <input type="hidden" name="_method" value="DELETE">
-        <button type="submit" class="btn-retro"><i class="fa fa-solid fa-trash"></i></button>
+        <button type="submit" class="btn-retro btn-small padding-10"><i class="fa fa-solid fa-trash"></i></button>
       </form>
     </div>
   </div>

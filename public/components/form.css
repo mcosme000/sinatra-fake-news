@@ -1,10 +1,17 @@
-.add-post, .edit-post {
+.form {
   background: #fff;
   padding: 20px;
+  border-radius: 5px;
 }
 
-.add-post input, .edit-post input {
+.form label {
+  display: block;
   margin-bottom: 10px;
+}
+
+.form input[type="text"] {
+  margin-bottom: 20px;
   padding: 8px 14px;
   display: block;
+  width: 80%;
 }

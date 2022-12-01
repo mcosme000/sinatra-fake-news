@@ -4,10 +4,14 @@
   padding: 15px 30px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .container {
-    width: 600px;
-    margin: 0 auto;
-    padding: 15px 30px;
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 350px;
   }
 }
